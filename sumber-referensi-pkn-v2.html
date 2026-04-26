@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumber Referensi — Hak & Kewajiban Warga Negara</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8670A;
+    --orange2: #FF8C3A;
+    --brown: #3D1500;
+    --cream: #FFF8F2;
+    --card: #FFFFFF;
+    --muted: #9A6B50;
+    --border: #F0DDD0;
+    --green: #1A6B35;
+    --blue: #185FA5;
+    --purple: #534AB7;
+    --red: #A32D2D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    min-height: 100vh;
+    padding-bottom: 60px;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100px; right: -100px;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,103,10,0.1), transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--brown);
+    padding: 44px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: 50%;
+    transform: translateX(-50%);
+    width: 300px; height: 100px;
+    border-radius: 50%;
+    background: rgba(232,103,10,0.15);
+    filter: blur(30px);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 30px;
+    margin-bottom: 14px; position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 800; color: #fff;
+    line-height: 1.1; position: relative; z-index: 1;
+    margin-bottom: 8px;
+  }
+  .hero h1 span { color: var(--orange2); }
+  .hero p {
+    font-size: 12px; color: rgba(255,255,255,0.55);
+    position: relative; z-index: 1;
+    font-weight: 300; letter-spacing: 0.3px;
+    margin-bottom: 20px;
+  }
+  .hero-stats {
+    display: flex; justify-content: center;
+    gap: 24px; flex-wrap: wrap;
+    position: relative; z-index: 1;
+  }
+  .hero-stat {
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    padding: 8px 16px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px; font-weight: 800; color: var(--orange2);
+  }
+  .hero-stat-label {
+    font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 1px;
+  }
+
+  /* STRIP */
+  .strip {
+    background: var(--orange);
+    padding: 9px 20px;
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    color: #fff; letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 32px 18px 0;
+    position: relative; z-index: 1;
+  }
+
+  .sec-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sec-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .cards { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+
+  .card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: 3px 0 0 3px;
+    transform: scaleY(0); transition: transform 0.2s ease;
+    transform-origin: bottom;
+  }
+  .card:hover { transform: translateX(5px); box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+  .card:hover::before { transform: scaleY(1); }
+
+  /* color variants */
+  .c-orange::before { background: var(--orange); }
+  .c-orange:hover { border-color: var(--orange); }
+  .c-green::before { background: var(--green); }
+  .c-green:hover { border-color: var(--green); }
+  .c-blue::before { background: var(--blue); }
+  .c-blue:hover { border-color: var(--blue); }
+  .c-purple::before { background: var(--purple); }
+  .c-purple:hover { border-color: var(--purple); }
+  .c-red::before { background: var(--red); }
+  .c-red:hover { border-color: var(--red); }
+
+  .card-num {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 800;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .c-orange .card-num { background: #FDE8D4; color: var(--orange); }
+  .c-orange:hover .card-num { background: var(--orange); color: #fff; }
+  .c-green .card-num { background: #EAF7EE; color: var(--green); }
+  .c-green:hover .card-num { background: var(--green); color: #fff; }
+  .c-blue .card-num { background: #E6F1FB; color: var(--blue); }
+  .c-blue:hover .card-num { background: var(--blue); color: #fff; }
+  .c-purple .card-num { background: #EEEDFE; color: var(--purple); }
+  .c-purple:hover .card-num { background: var(--purple); color: #fff; }
+  .c-red .card-num { background: #FEF0EE; color: var(--red); }
+  .c-red:hover .card-num { background: var(--red); color: #fff; }
+
+  .card-info { flex: 1; min-width: 0; }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 12.5px; font-weight: 700; color: var(--brown);
+    margin-bottom: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-sub {
+    font-size: 11px; color: var(--muted); line-height: 1.4;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-sub em { font-style: italic; }
+
+  .tag {
+    font-size: 9px; font-weight: 700;
+    padding: 3px 8px; border-radius: 20px;
+    flex-shrink: 0; letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .tag-hukum { background: #FDE8D4; color: #B84400; }
+  .tag-data { background: #E6F1FB; color: var(--blue); }
+  .tag-berita { background: #EAF7EE; color: var(--green); }
+  .tag-buku { background: #EEEDFE; color: var(--purple); }
+  .tag-lembaga { background: #FEF0EE; color: var(--red); }
+
+  .arrow {
+    font-size: 15px; color: var(--border); flex-shrink: 0;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .card:hover .arrow { transform: translateX(3px); }
+  .c-orange:hover .arrow { color: var(--orange); }
+  .c-green:hover .arrow { color: var(--green); }
+  .c-blue:hover .arrow { color: var(--blue); }
+  .c-purple:hover .arrow { color: var(--purple); }
+  .c-red:hover .arrow { color: var(--red); }
+
+  /* NOTE */
+  .note {
+    background: var(--brown); border-radius: 12px;
+    padding: 16px 18px; display: flex;
+    gap: 12px; align-items: flex-start; margin-bottom: 20px;
+  }
+  .note-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .note-text {
+    font-size: 11px; color: rgba(255,255,255,0.75);
+    line-height: 1.65; font-weight: 300;
+  }
+  .note-text strong { color: #FFD1A0; font-weight: 600; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .footer p {
+    font-size: 10.5px; color: var(--muted); line-height: 1.8;
+  }
+  .footer strong { color: var(--brown); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">UTS Kewarganegaraan 2026</div>
+  <h1>Hak & <span>Kewajiban</span><br>Warga Negara</h1>
+  <p>Daftar Sumber Referensi Resmi · Infografis Edukatif PKN · UNESA 2026</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">10</div>
+      <div class="hero-stat-label">Sumber Referensi</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">4</div>
+      <div class="hero-stat-label">Kategori Sumber</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">100%</div>
+      <div class="hero-stat-label">Bisa Diakses</div>
+    </div>
+  </div>
+</div>
+<div class="strip">✓ Semua link telah diverifikasi — klik untuk membuka langsung →</div>
+
+<div class="main">
+
+  <!-- REGULASI -->
+  <div class="sec-label">⚖ Regulasi & Konstitusi</div>
+  <div class="cards">
+
+    <a class="card c-orange"
+       href="https://jdih.mkri.id/index.php?page=web.Berita&id=11732"
+       target="_blank" rel="noopener">
+      <div class="card-num">01</div>
+      <div class="card-info">
+        <div class="card-title">UUD NRI 1945 — Teks Lengkap Amandemen IV</div>
+        <div class="card-sub">Mahkamah Konstitusi RI · Ps. 27, 28D, 28E, 28J, 31, 33, 34</div>
+      </div>
+      <span class="tag tag-hukum">Hukum</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-orange"
+       href="https://peraturan.bpk.go.id/Details/40647/uu-no-13-tahun-2003"
+       target="_blank" rel="noopener">
+      <div class="card-num">02</div>
+      <div class="card-info">
+        <div class="card-title">UU No. 13 Tahun 2003 — Ketenagakerjaan</div>
+        <div class="card-sub">BPK RI · Hak pesangon, perlindungan buruh, Pasal 156</div>
+      </div>
+      <span class="tag tag-hukum">Hukum</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- DATA RESMI -->
+  <div class="sec-label">📊 Data & Statistik Resmi</div>
+  <div class="cards">
+
+    <a class="card c-blue"
+       href="https://www.bps.go.id/en/publication/2024/12/09/6f1fd1036968c8a28e4cfe26/keadaan-angkatan-kerja-di-indonesia-agustus-2024.html"
+       target="_blank" rel="noopener">
+      <div class="card-num">03</div>
+      <div class="card-info">
+        <div class="card-title">BPS — Keadaan Angkatan Kerja Indonesia Agustus 2024</div>
+        <div class="card-sub">57,9% pekerja informal · data PHK & pengangguran nasional</div>
+      </div>
+      <span class="tag tag-data">Data</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-blue"
+       href="https://www.bps.go.id/en/statistics-table/2/MjE1OSMy/-metode-baru--indeks-demokrasi-indonesia-menurut-provinsi.html"
+       target="_blank" rel="noopener">
+      <div class="card-num">04</div>
+      <div class="card-info">
+        <div class="card-title">BPS — Indeks Demokrasi Indonesia (IDI) per Provinsi</div>
+        <div class="card-sub">Metode baru · IDI 2021–2023 · aspek kebebasan & kesetaraan</div>
+      </div>
+      <span class="tag tag-data">Data</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-blue"
+       href="https://www.bps.go.id/en/publication/2024/12/09/e1d598ff2e31af0983bb011b/keadaan-pekerja-di-indonesia-agustus-2024.html"
+       target="_blank" rel="noopener">
+      <div class="card-num">05</div>
+      <div class="card-info">
+        <div class="card-title">BPS — Keadaan Pekerja di Indonesia Agustus 2024</div>
+        <div class="card-sub">Status pekerjaan, upah, & kondisi kerja nasional 2024</div>
+      </div>
+      <span class="tag tag-data">Data</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- BERITA AKTUAL -->
+  <div class="sec-label">📰 Berita & Kasus Aktual</div>
+  <div class="cards">
+
+    <a class="card c-green"
+       href="https://money.kompas.com/read/2025/02/28/141400926/perjalanan-kelam-sritex--pailit-hingga-phk-10.965-karyawan"
+       target="_blank" rel="noopener">
+      <div class="card-num">06</div>
+      <div class="card-info">
+        <div class="card-title">Kompas — Perjalanan Kelam Sritex: Pailit & PHK 10.965 Karyawan</div>
+        <div class="card-sub">Kompas.com · 28 Februari 2025 · kronologi lengkap kasus pailit</div>
+      </div>
+      <span class="tag tag-berita">Berita</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-green"
+       href="https://nasional.kompas.com/read/2025/03/03/08250811/menanti-langkah-pemerintah-atasi-nasib-ribuan-karyawan-sritex-yang-kena-phk"
+       target="_blank" rel="noopener">
+      <div class="card-num">07</div>
+      <div class="card-info">
+        <div class="card-title">Kompas — Nasib Ribuan Karyawan Sritex yang Kena PHK</div>
+        <div class="card-sub">Kompas.com · 3 Maret 2025 · respons pemerintah & hak buruh</div>
+      </div>
+      <span class="tag tag-berita">Berita</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-green"
+       href="https://www.tempo.co/ekonomi/phk-massal-terjadi-di-pt-sritex-yang-pailit-ini-prosedur-phk-karyawan-menurut-uu-cipta-kerja-1215095"
+       target="_blank" rel="noopener">
+      <div class="card-num">08</div>
+      <div class="card-info">
+        <div class="card-title">Tempo — PHK Massal Sritex & Prosedur UU Cipta Kerja</div>
+        <div class="card-sub">Tempo.co · 2025 · analisis hukum PHK & hak pesangon buruh</div>
+      </div>
+      <span class="tag tag-berita">Berita</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- REFERENSI AKADEMIK -->
+  <div class="sec-label">📚 Referensi Akademik</div>
+  <div class="cards">
+
+    <a class="card c-purple"
+       href="https://jimly.com/makalah"
+       target="_blank" rel="noopener">
+      <div class="card-num">09</div>
+      <div class="card-info">
+        <div class="card-title">Jimly Asshiddiqie — Makalah & Karya Akademik</div>
+        <div class="card-sub"><em>Pengantar Ilmu Hukum Tata Negara</em> (2010) · hak konstitusional warga</div>
+      </div>
+      <span class="tag tag-buku">Buku</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card c-purple"
+       href="https://scholar.google.com/scholar?q=Soerjono+Soekanto+Sosiologi+Suatu+Pengantar"
+       target="_blank" rel="noopener">
+      <div class="card-num">10</div>
+      <div class="card-info">
+        <div class="card-title">Soerjono Soekanto — Sosiologi Suatu Pengantar (2012)</div>
+        <div class="card-sub">Google Scholar · konsep kewajiban dalam hukum & masyarakat</div>
+      </div>
+      <span class="tag tag-buku">Buku</span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- NOTE -->
+  <div class="note">
+    <div class="note-icon">📌</div>
+    <div class="note-text">
+      <strong>Catatan Akademik:</strong> Semua link telah diverifikasi dan dapat diakses secara publik per April 2026. Untuk referensi buku Soekanto & Mahfud MD, tersedia di perpustakaan kampus UNESA atau dapat dicari melalui Google Scholar dan iPusnas (perpustakaan digital nasional) di <strong>ipusnas.id</strong>.
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      <strong>UTS Kewarganegaraan 2026</strong><br>
+      Universitas Negeri Surabaya · S1 PTI / Sains Data<br>
+      Dosen: Rianda Usmi, S.Pd., M.Pd<br>
+      Topik: Hak & Kewajiban Warga Negara — Kasus PHK Massal Sritex 2024–2025
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
